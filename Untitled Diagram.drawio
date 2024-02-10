@@ -1,9 +1,15 @@
-<mxfile host="app.diagrams.net" modified="2024-02-10T00:25:28.491Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:122.0) Gecko/20100101 Firefox/122.0" version="23.1.2" etag="b54dbgZIfnldG6-OEEkB" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-10T00:26:11.588Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:122.0) Gecko/20100101 Firefox/122.0" etag="rI_1CGAZTD2s0S04tPXb" version="23.1.2" type="github">
   <diagram name="Page-1" id="X0_Rfpvhj404rt-ZyXfb">
-    <mxGraphModel>
+    <mxGraphModel dx="1434" dy="795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="Ic5WmYcXg_bpENTva9u6-1" value="Entity" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="350" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Ic5WmYcXg_bpENTva9u6-2" value="+Attribute1&#xa;+Attribute2&#xa;+Attribute3" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="Ic5WmYcXg_bpENTva9u6-1">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
