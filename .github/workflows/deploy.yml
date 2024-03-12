@@ -1,0 +1,24 @@
+name: Deploy to Remote Server
+
+on:
+  push:
+    branches: [ main ]  # Trigger on pushes to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Choose an appropriate runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Connect to remote server (using SSH key)
+        uses: nmusoke/ssh-action@v2
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          user: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.DEPLOY_KEY }}  # Replace with path to private key file (not stored in workflow)
+
+      - name: Run deployment script
+        run: |
+          bash secrets.SCRIPT_PATH
