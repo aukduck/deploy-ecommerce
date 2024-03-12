@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Connect to remote server (using SSH key)
-        uses: nmusoke/ssh-action@v2
+        uses: aukduck/deploy-ecommerce@v2
         with:
           host: ${{ secrets.SERVER_HOST }}
           user: ${{ secrets.SERVER_USER }}
