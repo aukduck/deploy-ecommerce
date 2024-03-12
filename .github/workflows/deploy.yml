@@ -2,23 +2,19 @@ name: Deploy to Remote Server
 
 on:
   push:
-    branches: [ main ]  # Trigger on pushes to the main branch
+    branches: [main]
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # Choose an appropriate runner
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Connect to remote server (using SSH key)
-        uses: aukduck/deploy-ecommerce
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          user: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.DEPLOY_KEY }}  # Replace with path to private key file (not stored in workflow)
-
-      - name: Run deployment script
+      - name: install ssh keys
         run: |
-          bash secrets.SCRIPT_PATH
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+      - name: connect and pull
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} ${{ secrets.SSH_COMMAND }}
+      - name: cleanup
+        run: rm -rf ~/.ssh
